@@ -16,15 +16,46 @@
     overlayDiv.style.overflowY = 'scroll';
     overlayDiv.style.padding = '10px';
 
+    var topDiv = document.createElement('div');
+    topDiv.style.display = 'flex';
+    topDiv.style.justifyContent = 'space-between';
+    topDiv.style.alignItems = 'center';
+
+    var topRightDiv = document.createElement('div');
+    var topLeftDiv = document.createElement('div');
+    topLeftDiv.style.display = 'flex';
+    topLeftDiv.style.justifyContent = 'center';
+
+    var logo = document.createElement('img');
+    logo.src = 'https://github.com/EricWeng0527/NCKUScoreDistribution/blob/main/NCKU.png?raw=true';
+    logo.style.width = '35px';
+    logo.style.height = '35px';
+    logo.style.marginRight = '5px';
+    topLeftDiv.appendChild(logo);
+
+    var Title = document.createElement('span');
+    Title.innerText = "成積分布圖查詢";
+    Title.style.fontWeight = 'bold';
+    Title.style.fontSize = '25px';
+    topLeftDiv.appendChild(Title);
+
+    var counter = document.createElement('span');
+    counter.innerHTML = "累積使用人數：<a href=\"https://www.hitwebcounter.com\" target=\"_blank\">\
+<img src=\"https://hitwebcounter.com/counter/counter.php?page=9456704&style=0008&nbdigits=5&type=page&initCount=0\" title=\"Counter Widget\" Alt=\"Visit counter For Websites\"   border=\"0\" /></a>";
+    counter.style.fontSize = '12px';
+    counter.style.marginRight = '10px';
+    topRightDiv.appendChild(counter);
+
     var closeButton = document.createElement('button');
     closeButton.innerHTML = 'Close';
-    closeButton.style.position = 'absolute';
-    closeButton.style.top = '5px';
-    closeButton.style.right = '5px';
     closeButton.onclick = function () {
         document.body.removeChild(overlayDiv);
     };
-    overlayDiv.appendChild(closeButton);
+    topRightDiv.appendChild(closeButton);
+
+    topDiv.appendChild(topLeftDiv);
+    topDiv.appendChild(topRightDiv);
+    overlayDiv.appendChild(topDiv);
 
 
     var table = document.querySelectorAll('table')[3];
@@ -40,17 +71,6 @@
         var gra = splitText[2];
         var name = splitText[3];
         var num = splitText[4];
-
-
-        var Title = document.createElement('span');
-        Title.innerText = "成積分布圖查詢";
-        Title.style.fontWeight = 'bold';
-        Title.style.fontSize = '25px';
-        overlayDiv.appendChild(Title);
-
-        var lineBreak = document.createElement('br');
-        overlayDiv.appendChild(lineBreak);
-        overlayDiv.appendChild(lineBreak);
 
         var newTable = document.createElement('table');
         newTable.style.width = '100%';
