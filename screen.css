@@ -1,0 +1,25 @@
+#overlayDiv {
+    width: 40%;
+    height: 72%;
+}
+
+@media(max-width: 1200px) {
+    #overlayDiv {
+        width: 60%;
+        height: 72%;
+    }
+}
+
+@media(max-width: 1070px) {
+    #overlayDiv {
+        width: 70%;
+        height: 72%;
+    }
+}
+
+@media(max-width: 500px) {
+    #overlayDiv {
+        width: 70%;
+        height: 40%;
+    }
+}
