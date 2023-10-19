@@ -3,10 +3,10 @@
     height: 72%;
 }
 
-@media(max-width: 1200px) {
+@media(max-width: 500px) {
     #overlayDiv {
-        width: 60%;
-        height: 72%;
+        width: 70%;
+        height: 40%;
     }
 }
 
@@ -17,9 +17,9 @@
     }
 }
 
-@media(max-width: 500px) {
+@media(max-width: 1200px) {
     #overlayDiv {
-        width: 70%;
-        height: 40%;
+        width: 60%;
+        height: 72%;
     }
 }
